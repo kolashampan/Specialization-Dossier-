@@ -1,0 +1,268 @@
+body {
+    margin: 1% 4% 2% 16%;
+    position: relative;
+    display: flex;
+    background-color: #bf93812a;
+    flex-direction: column;
+}
+body::before,
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+body::before {
+    border: 10px solid white; 
+}
+
+body::after {
+    border: 10px solid rgb(255, 255, 255); 
+    z-index: 1;
+}
+
+@font-face {
+    font-family:Bluu;
+    src:url(bluunext-bold.ttf)
+}
+
+@font-face {
+    font-family:Syne;
+    src:url(Syne-VariableFont_wght.ttf)
+}
+
+#animation-container {
+    width: 100px; /* Adjust width as needed */
+    height: 100px; /* Adjust height as needed */
+    position: relative; /* Ensure proper positioning of canvas */
+    border: none; /* Example border style */
+}
+
+.heading {
+    margin: 2% 4% 4% -8%;
+    text-align: left;
+    border-bottom: 2px solid #1b1501;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.heading a:hover, a:active {
+    font-style: italic;
+    cursor: pointer;
+}
+
+.welcome {
+    width: 100%;
+    text-align: left;
+    order: 2;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+.table_contents {
+    width: 30%; 
+    margin-left: -18%;
+    Margin-right: 3%;
+    position: fixed;
+    text-align: left;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    order: 1; 
+}
+
+.table_contents ul {
+    list-style-type: none;
+}
+
+
+.table_contents li a {
+    color: #1b1501;
+    text-decoration: none;
+    letter-spacing: normal;
+    transition: letter-spacing 0.2s ease-out;
+}
+
+.table_contents li a:hover h4 {
+    color: rgb(41, 98, 255);
+    letter-spacing: 0.1em;
+    transition: letter-spacing 0.2s ease-in;
+}
+
+
+.table_contents h2 {
+    display: inline;
+}
+
+.colon {
+    color: rgb(41, 98, 255);
+    margin-left: 10px;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0% 4% 0% 4%;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+.container a {
+    color: black;
+    text-decoration: underline;
+}
+
+.container a:hover {
+    color: rgb(41, 98, 255);
+}
+.column_3 {
+    width: 6%;
+    flex: 1% 1% 1%; /* Set flex-grow, flex-shrink, and flex-basis */
+    writing-mode: vertical-lr;
+    text-align: left;
+    transform: rotate(360deg); 
+}
+
+.column_1 {
+    flex: 0 0 45%; /* Set flex-grow, flex-shrink, and flex-basis */
+    margin: 0% 3% 2% 0%;
+}
+
+.column_2 {
+    flex: 0 0 45%; /* Set flex-grow, flex-shrink, and flex-basis */
+    margin: 0% 0% 2% 2%;
+}
+
+
+.column_1 a {
+    text-align: left;
+}
+
+
+.column_2 a {
+    text-align: right;
+}
+
+.thumbnail {
+    height: 15vw;
+    width: auto; 
+    margin: 0 auto;
+    display: block;
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out;
+}
+
+
+.thumbnail:hover {
+    opacity: 0.75;
+    transition: opacity 0.4s ease-in-out;
+}
+
+  
+  #typical-tasks,
+  #job-market-outlook,
+  #training-agenda,
+  #resources {
+    text-align: right;
+    margin-right: 4%;
+  }
+  #professional-context,
+  #technical-skill-snapshot,
+  #labor-trends {
+    margin-left:4%;
+  }
+
+.tasks {
+    font-family: Syne;
+    font-size: 1vw;
+    text-align: left;
+    line-height: 1.5;
+    letter-spacing: .06em;
+    color: #1b1501;
+}
+
+
+a {
+    text-decoration: none;}
+
+h1 {
+    font-size: 2vw;
+    font-family: Bluu;
+    color: rgb(41, 98, 255);
+    font-weight: bold;
+    letter-spacing: .05em;
+    padding-top: 20px;
+    line-height: 2;
+}
+
+
+h2 {
+    font-size: 1.2vw;
+    font-family: Bluu;
+    font-weight: lighter;
+    line-height: 1.5;
+    color: #1b1501;
+}
+
+h3 {
+    font-size: 1.2vw;
+    font-family: Syne;
+    line-height: 1.5;
+    font-weight: normal;
+    letter-spacing: .06em;
+    color: #1b1501;
+}
+
+h4 {
+    font-size: 1vw;
+    font-family: Syne;
+    font-weight: normal;
+    line-height: 2;
+    letter-spacing: .06em;
+    color: #1b1501;
+}
+
+h5 {
+    font-size: 1.4vw;
+    font-family: Syne;
+    color: rgb(41, 98, 255);
+    letter-spacing: .06em;
+    font-weight: lighter;
+    margin: 9% 0% 0% 1%;
+}
+
+h6 {
+    font-size: 1.3vw;
+    font-family: Bluu;
+    font-weight: lighter;
+    color: rgb(41, 98, 255);
+    letter-spacing: .05em;
+}
+
+p {
+    font-family: Syne;
+    font-size: 1vw;
+    font-weight: normal;
+    line-height: 1.5;
+    letter-spacing: .05em;
+    color: #1b1501;
+}
+
+h1, h2, h3, h4, h5, h6, p .colon {
+    display: inline;
+}
+
+p, h1 {
+    display: inline;
+}
+

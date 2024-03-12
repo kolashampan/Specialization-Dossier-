@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dossier_style.css">
+    <script src="sketch.js"></script>
+    <title>Archival Specialization Dossier</title>
+</head>
+<body>
+
+  <div id="welcome" class="heading">
+      <h1>Archival Specialization Dossier : </h1>
+      <p>A repository of commentary and resources for aspiring archivists<p>
+        <script>
+ // Define global variables
+let filmSpeed = 0; // Initial film speed in frames per second
+let targetSpeed = 0; // Target speed to ease to
+let easing = 0.1; // Easing factor for easing to stop
+let accelerationTime = 2; // Time to reach target speed (in seconds)
+let maintainSpeedTime = 2; // Time to maintain target speed (in seconds)
+let slowDownTime = 4; // Time to slow down to stop (in seconds)
+let frameWidth = 160; // Width of the frame
+let frameHeight = 240; // Height of the frame
+let perforationSpacing = 85; // Spacing between perforations
+let perforationSize = 15; // Size of the perforations (square)
+let perforationMargin = 10; // Margin between perforations and edges
+let filmPosition = 0; // Current position of the film
+let lastInteractionTime = 0; // Time of the last interaction (click or scroll)
+
+function setup() {
+  createCanvas(frameWidth, frameHeight);
+}
+
+function draw() {
+  background(255); // Set background color to white
+  
+  // Draw perforations along the left and right edges
+  fill(41, 98, 255); // Set fill color to rgb(41, 98, 255)
+  noStroke(); // Remove stroke (outline)
+  for (let y = -perforationSpacing + filmPosition % perforationSpacing; y < height; y += perforationSpacing) {
+    // Draw perforations on the left edge
+    square(perforationMargin, y, perforationSize);
+    // Draw perforations on the right edge
+    square(width - perforationMargin - perforationSize, y, perforationSize);
+  }
+  
+  // Update film position based on easing to the target speed
+  filmPosition += (targetSpeed - filmSpeed) * easing;
+  
+  // Check if it's time to slow down after maintaining target speed
+  if (millis() - lastInteractionTime > (accelerationTime + maintainSpeedTime) * 1000) {
+    targetSpeed = 0; // Start slowing down
+  }
+}
+
+function interact() {
+  lastInteractionTime = millis(); // Update last interaction time
+  targetSpeed = 288; // Set target speed twice as fast
+}
+
+function mouseWheel(event) {
+  interact();
+}
+
+function mouseClicked() {
+  interact();
+}
+      </script>
+      
+  </div>
+  <div class="container">
+    <div class="welcome">
+      <h1>Welcome!</h1>
+      <br>
+      <h3>We are aspiring archivists and information professionals with commitments to [insert text] and preserve time-based media art. This site is designed to support those interested in beginning a career as an archivist or research librarian in understanding the skills required to enter and excel in the field, as well as resources and perspectives on what working in the field looks like. We present our independent research as well as insights gathered through interviews conducted with two amazing</h3>
+    </div>
+    <div class="table_contents">
+i      <h2>Table of Contents</h2><h1 class="colon">:</h1>
+      <ul>
+        <li><a href="#welcome"><h4>i. Welcome</h4></a></li>
+        <li><a href="#typical-tasks"><h4>ii. Typical Tasks</h4></a></li>
+        <li><a href="#professional-context"><h4>iii. Professional Context</h4></a></li>
+        <li><a href="#job-market-outlook"><h4>iv. Job-Market Outlook</h4></a></li>
+        <li><a href="#technical-skill-snapshot"><h4>v. Technical Skill Snapshot</h4></a></li>
+        <li><a href="#training-agenda"><h4>vi. Training Agenda</h4></a></li>
+        <li><a href="#labor-trends"><h4>vii. Labor Trends</h4></a></li>
+        <li><a href="#resources"><h4>viii. Resources</h4></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="column_1">
+      <br><br><br>
+        <img class="thumbnail" src="Pat.jpg" alt="Photo of Patricia"/>
+        <br>
+        <h2>Patricia </h2><p> is the Bentson Archivist and Assistant Curator of the Moving Image department of the 
+        <a href="https://walkerart.org/">Walker Art Center</a>
+        , where she oversees the preservation of the Ruben/Bentson Moving Image Collection. She also serves on the Board of Directors of 
+        <a href="https://canyoncinema.com/">Canyon Cinema</a>, a foundation in San Francisco dedicated to education and access to artist-made films.
+        She holds a B.A. in Media Studies from UC Berkeley and is a graduate of <a href="https://seis.ucla.edu/departments-and-degrees/department-of-information-studies/master-of-library-and-information-science">UCLA’s MLIS program</a>.
+        </p>
+    </div>
+    <div class="column_3"> <h5>information professionals</h5></div>
+    <div class="column_2">
+      <br><br><br>
+        <img class="thumbnail" src="Rhi.jpg" alt="Photo of Rhian"/>
+        <br>
+        <h2>Rhian </h2><p> is the Bentson Archivist and Assistant Curator of the Moving Image department of the 
+          <a href="https://walkerart.org/">Walker Art Center</a>
+          , where she oversees the preservation of the Ruben/Bentson Moving Image Collection. She also serves on the Board of Directors of 
+          <a href="https://canyoncinema.com/">Canyon Cinema</a>, a foundation dedicated to education and access to artist-made films, based in San Francisco.
+        </p>
+    </div>
+  </div>
+
+  <h1 id="typical-tasks">Typical Tasks</h1>
+    <div class="container">
+      <div class="column_1">
+        <h2>Media Archival and Curatorial</h2><h1 class="colon">:</h1>
+        <br>
+        <p>As archivist and Assistant Curator of the Walker's Moving Image Department, Patricia manages the Bentson Archive and curates the collection, in tandem with the Head Archivist who is Patricia’s direct supervisor. Patricia oversees the preservation of the collection, but also programs and activates it within the Walker and outside of the institution. Her role includes recommending and making acquisitions for the Moving Image Collection.
+        </p>
+        <br>
+        <div class="tasks">
+          <ul>
+            <li><p></p>Re-inspection of the entire collection every 5-10 years, especially the film elements</li>
+            <li>Drafting letters of agreement for artists whose work will be exhibited</li>
+            <li>Coordinating loans of materials to outside institutions</li>
+            <li>Administrative tasks: budgeting for projects, programming planning meetings, generating proposals for acquisitions</li>
+          </ul>
+        </div>
+        <br>
+        <h6>"Whose work should we be showing, right? Do we want to see a bunch of art from the 1950s made predominantly by white dudes? So part of my role here is, because I have this background with experimental moving-image art, to bring those suggestions to the forefront and advocate for artists whose work we should be showcasing, or artists who we should be giving money to. I think that's what's important at the end of the day."</h6>
+      </div>
+      <div class="column_3">
+        <h5>job overview</h5><h5>day-to-day</h5>
+      </div>
+      <div class="column_2">
+        <h2>Academic Archival and Librarianship</h2><h1 class="colon">:</h1>
+        <br>
+        <p>As an Information Literacy Liaison, Rhian collaboratively designs curriculums to incorporate information literacy programming into departmental or class structures, creating a sustainable, efficient, and cost-effective preservation environment for historic university materials. His archivist duties were divided into three main parts: patron interactions and outreach, office work and meetings, and processing archival material by identifying priorities.
+        </p>
+        <br><br><br><br><br><br>
+        
+      </div>
+    </div>
+
+      <h1 id="professional-context">Professional Context</h1>
+      <div class="container">
+        <div class="column_1">
+          <br>
+            <h4><b>Media Archival and Curatorial</b><h1 class="colon">:</h1>
+              <p>Blah blah blah blah</p>
+        </div>
+        <div class="column_3">
+          <h5>associations, confreneces & journals</h5>
+        </div>
+        <div class="column_2">
+          <br>
+          <h4><b>Academic Archival and Librarianship</b></h4><h1 class="colon">:</h1>
+          <p>Blah blah blah blah</p>
+          <h5>Job Listings</h5>
+          <h4></h4>
+        </div>
+      </div>
+    <h1 id="job-market-outlook">Job-Market Outlook</h1>
+    <p id="job-market-outlook"> Blah blah blah</p>
+    <h1 id="technical-skill-snapshot">Technical Skill Snapshot</h1>
+    <p> Blah blah blah</p>
+    <h1 id="training-agenda">Training Agenda</h1>
+    <p id="training-agenda"> Blah blah blah</p>
+    <h1 id="labor-trends">Labor Trends</h1>
+    <p> Blah blah blah</p>
+    <h1 id="resources">Resources</h1>
+    <p id="resources"> Blah blah blah</p>
+    <br><br>
+  </div>
+
+</body>
+
+</html>
