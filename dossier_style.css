@@ -35,13 +35,6 @@ body::after {
     src:url(Syne-VariableFont_wght.ttf)
 }
 
-#animation-container {
-    width: 100px; /* Adjust width as needed */
-    height: 100px; /* Adjust height as needed */
-    position: relative; /* Ensure proper positioning of canvas */
-    border: none; /* Example border style */
-}
-
 .heading {
     margin: 2% 4% 4% -8%;
     text-align: left;
